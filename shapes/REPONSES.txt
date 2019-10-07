@@ -1,0 +1,22 @@
+exercice 1 : 
+
+1- ça marche car comme nous n'avons pas implementés de constructeur,  le compilateur a définit un constructeur par défaut qui initialise les attributs de point a 0.
+
+2-les attributs du point sont déclarés privés, ils ne sont donc pas accessibles depuis TestPoint.
+-la solution serait de : soit les declarer public, soit d'implementer des getters (public) qui permetteront d'acceder aux attributs de point depuis d'autres classes.
+
+3-les champs d'une classe doivent toujours être privés pour respecter le principe d'encapsulation de la POO, ainsi on controlera quelle classe pourra les voir ou les modifiers via des getters et des setters.
+
+4-un accesseur(getter) est une méthode qui permet d'acceder en lecture ou en écriture a un attribut d'une classe donnée.
+
+-oui on devra le faire ici afin d'afficher les attributs de point dans TestPoint avec des getters.
+
+5-Maintenant qu'on a crée un constructeur, le constructeur par défaut n'est plus généré par le constructeur, le notre étant paramétré, il y aura donc une erreur de compilation.
+
+6-
+
+7-Créer une variable static nbrPoints qui sera incrémentée dans le constructeur (a chaque point crée, la variable sera incréméntée de 1).
+
+8-le compilateur saura quel constructeur appeler selon le nombre et le type des paramétres donnés lors de l'appel.
+
+

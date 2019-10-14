@@ -40,3 +40,4 @@ exercice 4:
 5-le problème est que, comme nous avons initialisé les deux cercles avec le même objet point et que translate modifie l'objet centre lui même, il est donc modifié pour les deux points.
 La solution est de faire appelle a une variable intermediaire dans la méthode translate afin de translater le centre du point concerné seulement.
 6- le problème est que, en translatant le point renvoyé par getcentre, on a translaté le cercle en entier, une solution serait de faire en sorte que getcentre renvoie une copie du cercle.
+9- oui on doit en faire une méthode statique car elle sera appelée pour un ensemble de cercles et non pas pour un objet cercle précis.

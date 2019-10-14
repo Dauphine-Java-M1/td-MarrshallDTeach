@@ -1,5 +1,7 @@
 package fr.dauphine.ja.mouhoubiabdelouheb.shapes;
 
+import java.util.ArrayList;
+
 public class Circle {
 	
 	private Point center;
@@ -20,13 +22,41 @@ public class Circle {
 	public String toString()
 	{
 		
-		return "le centre du point est: "+this.center+"rayon = "+this.rayon ;
+		return "le centre du point est: "+this.center+"rayon = "+this.rayon+"Son aire est :"+this.surface() ;
 	}
 	
 	public Point getCenter()
 	{
 		Point temp=new Point(this.center);
 		return temp;
+	}
+	
+	public double surface()
+	{
+		return (this.rayon*this.rayon)*Math.PI;
+	}
+	
+	public boolean contains(Point p)
+	{
+		double distance=Math.sqrt(((p.getX()-this.center.getX())*(p.getY()-this.center.getY())+((p.getY()-this.center.getY()))));
+		if(distance<=this.rayon)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public static boolean containes(Point p, ArrayList<Circle> liste)
+	{
+		for (Circle c : liste) {
+			if (c.contains(p)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static void main(String[] args) {

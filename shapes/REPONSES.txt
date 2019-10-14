@@ -13,10 +13,30 @@ exercice 1 :
 
 5-Maintenant qu'on a crée un constructeur, le constructeur par défaut n'est plus généré par le constructeur, le notre étant paramétré, il y aura donc une erreur de compilation.
 
-6-
+6-aucun changement, le nom qu'on donne aux parametres n'a pas d'importance.
 
 7-Créer une variable static nbrPoints qui sera incrémentée dans le constructeur (a chaque point crée, la variable sera incréméntée de 1).
 
 8-le compilateur saura quel constructeur appeler selon le nombre et le type des paramétres donnés lors de l'appel.
 
 
+exercice 2:
+1-ce code affichera true pour la première et false pour la deuxième
+car la commande p2=p1 signifie que p2 referencera le même objet p1, par contre même si p1 et p3 ont les mêmes valeurs ce sont deux objets distincts donc la comparaison renvoie false.
+pour résumer: en java l'égalité entre les objets est une égalité de référence et non de valeurs.
+
+3-le resultat de l'execution sera 0 et -1, il renvoie 0 car la position de l'objet référencé par p2(le même qui est referencé par p1 comme expliqué précedemment) est a la premiére position (donc la position 0)  de la liste.
+la méthode indexOf renvoie -1 lorsque l'objet passé en paramètre n'est pas dans la liste, ce qui est le cas de p3, pour les raisons citées au dessus.
+c'est la méthode equals qui est appelée, la solution serait de la redefinir.
+
+exercice 3:
+2-si on essaie d'ajouter au dela de la capacité du tableau on aura une exeption de type arrayOutOfBoundException, il faut créer une variable qui gardera le nbr de points crées et faire un test avant la création du point pour voir si on ne depassera pas la capacité.
+5-On aura une exception de type NullPointerException
+6-la méthode pointCapacity n'a plus de raison d'être car il n'y aura pas de limite au nombre de points qu'on peux ajouter.
+la méthode nbpoints ne consistera plus qu'a renvoyer la taille de la liste
+et la méthode contains est déjà implementée par défaut on pourra l'utiliser sans la définir.
+
+exercice 4:
+5-le problème est que, comme nous avons initialisé les deux cercles avec le même objet point et que translate modifie l'objet centre lui même, il est donc modifié pour les deux points.
+La solution est de faire appelle a une variable intermediaire dans la méthode translate afin de translater le centre du point concerné seulement.
+6- le problème est que, en translatant le point renvoyé par getcentre, on a translaté le cercle en entier, une solution serait de faire en sorte que getcentre renvoie une copie du cercle.

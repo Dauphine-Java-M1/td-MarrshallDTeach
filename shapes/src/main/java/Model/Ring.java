@@ -1,4 +1,4 @@
-package fr.dauphine.ja.mouhoubiabdelouheb.shapes;
+package Model;
 
 import java.util.ArrayList;
 import java.util.Iterator;

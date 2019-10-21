@@ -1,4 +1,4 @@
-package fr.dauphine.ja.mouhoubiabdelouheb.shapes;
+package fr.dauphine.ja.mouhoubiabdelouheb.shapes.model;
 
 public class TestPoint {
 

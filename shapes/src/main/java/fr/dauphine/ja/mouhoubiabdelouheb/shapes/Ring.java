@@ -1,5 +1,8 @@
 package fr.dauphine.ja.mouhoubiabdelouheb.shapes;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Ring {
 	
 	 private Circle cercleInterne;
@@ -41,7 +44,22 @@ public String toString()
 
 public boolean contains(Point p)
 {
-	return true;
+	if (this.cercleExterne.contains(p) && !this.cercleInterne.contains(p) ) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+public boolean contains(Point p, ArrayList<Ring> rigns)
+{
+	for (Ring ring : rigns) {
+		if(ring.contains(p))
+		return true;
+	}
+	return false;
 }
 
 

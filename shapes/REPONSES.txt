@@ -41,3 +41,7 @@ exercice 4:
 La solution est de faire appelle a une variable intermediaire dans la méthode translate afin de translater le centre du point concerné seulement.
 6- le problème est que, en translatant le point renvoyé par getcentre, on a translaté le cercle en entier, une solution serait de faire en sorte que getcentre renvoie une copie du cercle.
 9- oui on doit en faire une méthode statique car elle sera appelée pour un ensemble de cercles et non pas pour un objet cercle précis.
+
+exercice 5 : 
+1-non, ce n'est pas interessant d'user de l'héritage dans ce cas là.
+4-ceci affichera l'adresse mémoire de l'objet crée, pour afficher les coordonnées, il faut définir toString

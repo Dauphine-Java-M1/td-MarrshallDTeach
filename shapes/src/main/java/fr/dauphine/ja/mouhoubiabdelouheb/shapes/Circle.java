@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Circle {
 	
 	private Point center;
-	private int rayon;
+	int rayon;
 	
 	public Circle(Point p, int r) {
 		this.center=p;
@@ -31,6 +31,11 @@ public class Circle {
 		return temp;
 	}
 	
+	public void setCenter(Point c)
+	{
+		this.center=c;
+	}
+	
 	public double surface()
 	{
 		return (this.rayon*this.rayon)*Math.PI;
@@ -48,6 +53,17 @@ public class Circle {
 			return false;
 		}
 	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if(!(o instanceof Circle)) return false;
+		
+		Circle c=(Circle) o;
+		
+		return (this.center.equals(c.center) && this.rayon == c.rayon);
+	}
+	
 	
 	public static boolean containes(Point p, ArrayList<Circle> liste)
 	{

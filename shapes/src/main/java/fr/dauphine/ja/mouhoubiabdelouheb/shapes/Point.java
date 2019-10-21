@@ -52,16 +52,14 @@ public class Point
 		}
 	}
 	
-	public boolean equals(Point p)
+	@Override
+	public boolean equals(Object o)
 	{
-		if (this.x == p.x && this.y == p.y)
-		{
-			return true;
-		} 
-		else 
-		{
-			return false;
-		}
+		if (!(o instanceof Point)) return false;
+		
+		Point p =(Point) o;
+		
+		return this.x == p.x && this.y == p.y;
 	}
 	
 	public void translate(int dx, int dy)

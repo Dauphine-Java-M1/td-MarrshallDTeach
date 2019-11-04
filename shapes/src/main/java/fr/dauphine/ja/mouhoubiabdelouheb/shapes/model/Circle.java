@@ -2,14 +2,19 @@ package fr.dauphine.ja.mouhoubiabdelouheb.shapes.model;
 
 import java.util.ArrayList;
 
-public class Circle {
+import fr.dauphine.ja.mouhoubiabdelouheb.shapes.view.CircleDrawer;
+import fr.dauphine.ja.mouhoubiabdelouheb.shapes.view.Drawer;
+
+public class Circle extends Shapes{
 	
 	private Point center;
 	int rayon;
 	
 	public Circle(Point p, int r) {
+		super.setDrawer(new CircleDrawer(this));
 		this.center=p;
 		this.rayon=r;
+		this.world.add(this);
 	}
 	
 	public void translate(int dx, int dy)
@@ -34,6 +39,11 @@ public class Circle {
 	public void setCenter(Point c)
 	{
 		this.center=c;
+	}
+	
+	public int getRayon()
+	{
+		return this.rayon;
 	}
 	
 	public double surface()
@@ -82,6 +92,12 @@ public class Circle {
 		c2.translate(1,1);
 		System.out.println(c+" "+c2);
 
+	}
+
+	@Override
+	public void draw() {
+		//circledrawer.draw();
+		
 	}
 
 }

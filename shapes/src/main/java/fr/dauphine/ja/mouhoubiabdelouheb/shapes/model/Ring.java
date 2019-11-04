@@ -3,26 +3,31 @@ package fr.dauphine.ja.mouhoubiabdelouheb.shapes.model;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Ring {
-	
+import fr.dauphine.ja.mouhoubiabdelouheb.shapes.view.Drawer;
+import fr.dauphine.ja.mouhoubiabdelouheb.shapes.view.RingDrawer;
+
+public class Ring extends Shapes{
 	 private Circle cercleInterne;
 	 private Circle cercleExterne;
 	
 	public Ring() {
-		
+		super.setDrawer(new RingDrawer(this));
 	}
 	
 public Ring(Circle ce, Circle ci) {
+		super.setDrawer(new RingDrawer(this));
 		if (ce.rayon>ci.rayon) {
 			ci.setCenter(ce.getCenter());
 			this.cercleExterne=ce;
-			this.cercleInterne=ci;	
+			this.cercleInterne=ci;
+			this.world.add(this);
 		}
 		else
 		{
 			ce.setCenter(ci.getCenter());
 			this.cercleExterne=ci;
-			this.cercleInterne=ce;	
+			this.cercleInterne=ce;
+			this.world.add(this);
 		}
 	}
 
@@ -70,6 +75,11 @@ public boolean contains(Point p, ArrayList<Ring> rigns)
 		System.out.println(r);
 		
 
+	}
+
+	@Override
+	public void draw() {
+		
 	}
 
 }

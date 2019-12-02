@@ -1,5 +1,6 @@
 package fr.dauphine.ja.mouhoubiabdelouheb.generics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -48,6 +49,40 @@ public class App
 		
 	}
 	
+	public static List listLength(List list) 
+	{
+		ArrayList length=new ArrayList();
+		for(int i=0;i<list.size();i++) 
+		{
+			CharSequence seq=(CharSequence)list.get(i);
+			length.add(seq.length());
+		}
+		return length;
+	}
+	
+	public static List listlength(List<? extends CharSequence> list)
+	{
+		ArrayList<Integer> lengths= new ArrayList();
+		for (CharSequence c : list) {
+			lengths.add(c.length());
+		}
+		
+		return lengths;
+		
+	}
+	
+	
+	public static <T extends CharSequence> List listtlength(List<T> list)
+	{
+		ArrayList<Integer> lengths= new ArrayList();
+		for (CharSequence c : list) {
+			lengths.add(c.length());
+		}
+		
+		return lengths;
+		
+	}
+	
 	
 	
     public static void main(String[] args) {
@@ -60,6 +95,11 @@ public class App
     	List<String> list=Arrays.asList("foo", "toto");
     	print(list);
     	length(list);
+    	
+    	List l=Arrays.asList("colonel", "reyel");
+    	System.out.println(listLength(l));
+    	System.out.println(listlength(l));
+    	System.out.println(listtlength(l));
     	
 	}
 }

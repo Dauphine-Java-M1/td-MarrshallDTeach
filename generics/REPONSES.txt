@@ -1,0 +1,11 @@
+Exo 1 : 
+1- public static int myMax(Integer... integers)
+2-public static int myMax(int a, Integer... integers)
+
+Exo 2 : 
+1- ne compile pas car les list de string ne sont pas des sous types de Object
+arraylist<String> --> List<String>
+arraylist<String>-/->arraylist<Object>
+2-Utiliser les wildcards
+private static void print(List<?> list) 
+
